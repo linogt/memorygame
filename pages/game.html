@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/game.css">
+
+  <script defer src="../js/game.js"></script>
+
+  <title>Memory Game</title>
+</head>
+
+<body>
+
+  <main>
+      <div>
+        <span class="player"></span>
+      </div>
+      <header>
+        <span>Tempo: <span class="timer">00</span></span>
+        <label for="tema">Escolha o tema:</label>
+        <select id="tema">
+          <option value="coragem">Coragem</option>
+          <option value="jovens_titas">Jovens Titãs em Ação</option>
+          <option value="hora_de_aventura">Hora de Aventura</option>
+        </select>
+        <label for="difficulty">Escolha a dificuldade:</label>
+        <select id="difficulty">
+          <option value="easy">Fácil</option>
+          <option value="medium" selected>Médio</option>
+          <option value="hard">Difícil</option>
+        </select>
+      </header>
+
+
+    <div class="grid"></div>
+  </main>
+
+</body>
+
+</html>
