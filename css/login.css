@@ -32,6 +32,12 @@ h1 {
   box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00ea, 0 0 70px #ff00ea, 0 0 80px #ff00ea, 0 0 100px #ff00ea, 0 0 150px #ff00ea;
 }
 
+h2 {
+  background-color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+}
+
 
 
 .login__header h1 {
@@ -79,4 +85,24 @@ h1 {
 
 body{
   background-image: url('../images/bg.jpg');
+}
+
+
+.ranking {
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+  margin: 10px;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.ranking__title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.ranking__entry {
+  font-size: 16px;
+  margin-bottom: 5px;
 }

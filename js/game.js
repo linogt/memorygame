@@ -100,6 +100,24 @@ const checkEndGame = () => {
     clearInterval(loop);
     timer.classList.add('stopped');
     alert(`Parabéns, ${spanPlayer.innerHTML}! Seu tempo foi de: ${timer.innerHTML}`);
+    const playerName = localStorage.getItem('player');
+    const playerTime = timer.innerHTML;
+    const difficulty = document.querySelector('#difficulty').value;
+const rankingEntry = { playerName, playerTime, difficulty };
+    let ranking = localStorage.getItem('ranking');
+    
+    if (ranking) {
+      ranking = JSON.parse(ranking);
+    } else {
+      ranking = [];
+    }
+    
+    ranking.push(rankingEntry);
+    localStorage.setItem('ranking', JSON.stringify(ranking));
+    const rankingElement = document.querySelector('.ranking');
+    const playerEntry = document.createElement('p');
+    playerEntry.textContent = `${playerName}: ${playerTime} segundos`;
+    rankingElement.appendChild(playerEntry);
     loop = null;
   }
 }
