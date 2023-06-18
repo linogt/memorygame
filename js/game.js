@@ -194,17 +194,22 @@ const loadGame = () => {
     'hard': 10
   };
   const numCards = numPairs[document.querySelector('#difficulty').value] * 2;
-  const duplicateCharacters = [...characters, ...characters];
-  const shuffledArray = duplicateCharacters.sort(() => Math.random() - 0.5);
-  const pairsArray = shuffledArray.slice(0, numPairs[document.querySelector('#difficulty').value]);
-  const cardsToShow = pairsArray.concat(pairsArray).sort(() => Math.random() - 0.5);
+  const pairsArray = characters.slice(0, numPairs[document.querySelector('#difficulty').value]);
+  const cardsToShow = pairsArray.concat(pairsArray);
+
+  // Embaralhar as cartas
+  for (let i = cardsToShow.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [cardsToShow[i], cardsToShow[j]] = [cardsToShow[j], cardsToShow[i]];
+  }
 
   cardsToShow.forEach((character) => {
     const card = createCard(character);
     grid.appendChild(card);
   });
   startTimer();
-}
+};
+
 
 
 let loop = null;
